@@ -104,21 +104,27 @@ class Game{
                      
                  }
 
-                stroke("yellow");
-                strokeWeight(1.5);
-                textAlign(CENTER);
-                textSize(24);
-                fill("white");
-                text("Player 1: "+player.score,100,200);
-                text("Player 2: "+player.score,100,200+30);
+            
 
                   if (player.index !== null) {
                   //   fill code here, to destroy the objects.
                   for (var i = 0; i < fruitGroup.length; i++) {
+                      
+                      
+                      
                     if (fruitGroup.get(i).isTouching(players)) {
                         fruitGroup.get(i).destroy();
                         player.score =player.score+1;
                         player.update();
+                        
+                        
+                        stroke("yellow"); 
+                        strokeWeight(1.5);
+                        textAlign(CENTER); 
+                        textSize(24);
+                        fill("white");
+                        text("Player 1: "+allPlayers.player1.score,100,200);
+                        text("Player 2: "+allPlayers.player2.score,100,200+30);
                         
                     }
                 }
